@@ -1,0 +1,51 @@
+{
+  "name": "china-meds-engine",
+  "version": "1.0.0",
+  "description": "Zero-dependency China personal medication customs clearance engine (GACC Decree 43 & State Council Decree 442): 38 Rx/OTC substance profiles, Red/Green channel evaluator, travel bag manifest validator, and bilingual pharmacy cards.",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/finalize-cjs.mjs",
+    "test": "node --test test/engine.test.mjs"
+  },
+  "homepage": "https://chinamedscheck.com/calculator",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbigailDavised/china-meds-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbigailDavised/china-meds-engine/issues"
+  },
+  "keywords": [
+    "china-customs",
+    "medication-compliance",
+    "travel-health",
+    "nmpa",
+    "gacc",
+    "rxnorm",
+    "prescription-travel"
+  ],
+  "author": "Abigail Davis <abigaild@agentmail.to>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.2"
+  }
+}
